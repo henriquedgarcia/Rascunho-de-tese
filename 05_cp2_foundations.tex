@@ -1,0 +1,31 @@
+
+\chapter{Foundations}\label{Cap:Foundations}
+
+\section{Transmissão de vídeos 360 com ladrilhos}
+
+O streaming de vídeo 360 envolve várias etapas de processamento de imagens, como mostra a figura XXXX. O processo começa com a captura do vídeo através de arranjos de câmeras tradicionais. As imagens precisam ser processadas, coladas e então projetadas em uma superfície plana onde um codificador de vídeo como H.265 ou AV1 é usado para comprimi-lo. Como o campo visual do ser humano é limitado, o usuário encherga apenas uma fração de toda as esfera. Assim, para que o que é visto tenha uma boa resolução, como Full DH, a projeção deve ter uma resolução muito maior, como 4K ou até mesmo 12K. Porém, como processar partes da esfera que não são assistidas desperdiçam recursos, a projeção é segmentada espacialmente em ladrilhos (tiles) que possam ser decodificados forma independentes.
+
+A
+
+A criação do streaming de vídeo esférico envolve várias etapas envolvendo diversas técnicas de processamento de imagem para
+
+Captura -> stitch --> projeção --> tiling --> codificação -->  Dashing --> Streaming --> decoding --> mount --> Rectilinear Projection (Viewport) --> display
+
+\subsection{Captura}
+\subsection{Projeção}
+\subsection{Tiling}
+\subsection{codificação}
+\subsection{Dashing}
+\subsection{Viewport}
+\subsection{Limitações da Literatura}
+\subsection{Conexão como trabalho proposto}
+\subsection{Avaliação de Desempenho}
+
+
+\section{360EAVP}
+\subsection{Preparação}
+\subsection{Identificador de face}
+\subsection{Preditor de Viewport}
+\subsection{Sobre a estrutura do programa}
+
+\section{Modelagem de QoE}
