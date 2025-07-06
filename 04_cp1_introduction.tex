@@ -1,63 +1,85 @@
 
-\chapter{Introduction}\label{Cap:Introduction}
-	
-	\section{READ ME FIRST!}
-	This template \LaTeX was prepared by the Internationalization Committee of the Post Graduate Program in Electrical Engineering (PPGEE) of the University of Brasilia, with the purpose of providing guidelines to students with dissertations or thesis works in progress.
-	
-	Under the internal regulations of PPGEE, Doctoral dissertations must be written in English. The master's thesis should be written in English, but Portuguese may be acceptable. Note that the use of terms `dissertation' and `thesis' in English are switched if compared to the ideas conveyed in Portuguese language. This is not an error; it is just how the English language works. If in doubt, refer to \href{https://www.enago.com/academy/thesis-vs-dissertation/}{this page}.
-	
-	This document has been adjusted to comply with Brazilian ABNT standards for academic writing, whilst keeping English as the default language. Observe that captions in the cover page, signatures page and catalog record page are supposed to be kept in Portuguese. The same happens with the section `Resumo'. Even if the chosen idiom is English, the Portuguese version must be provided.
-	
-	Citations follow the ABNT standard, for instance \cite{Saadat1999,ABNT1993}. You can use $\backslash$citeonline, as spoke \citeonline{MatthewN.O.Sadiku2000}, or maybe someone else.
-	
-	Table titles are placed at the top, sources at the bottom. \textbf{It is mandatory to specify the sources (references)} for all tables, even if they were compiled by the author - in such cases, a note `Own authorship' is sufficient.
-		\begin{table}[H]
-		\renewcommand{\arraystretch}{1.3}
-		\caption{Relative permitivitty ($\varepsilon_r$) and electrical resistivity ($\rho$) of soils and common materials }
-		\label{table:soil_properties}
-		\centering
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline
-			\textbf{Dry materials} & \boldmath{$\varepsilon_r$} & \boldmath{$\rho$ [$\Omega$.m]} & 
-			\textbf{Saturated materials} &
-			\boldmath{$\varepsilon_r$} &
-			\boldmath{$\rho$ [$\Omega$.m]} \\
-			\hline
-			Air & 1 & $10^9$--$10^{15}$ & Distilled water & 81 & $10^5$ \\ \hline
-			Sand and gravel & 2--6 & $10^5$ & Fresh water & 81 & 2000 \\ \hline
-			Clay & 5 & 300--5000 & Sea water & 81 & <10 \\ \hline
-			Shale and dry silt & 5 & 1000 & Sand & 20--30 & 1000--$10^4$ \\ \hline
-			Limestone gravel & 4 & $7\times10^6$ & Silt & 10 & 100--1000 \\ \hline
-			Sandy soil & 2.6 & 1000--8000 & Clay & 40 & <10 \\ \hline
-			Loamy soil & 2.4 & 300--5000 & Sandy soil & 25 & <150 \\ \hline
-			Granite & 5 & 1500--$10^4$ & Granite & 7 & 1000 \\ \hline
-			Limestone & 4 & 500--5000 & Limestone & 8 & 500 \\ \hline
-			Salt & 5--6 & 1000--$10^5$ & Loamy soil & 15 & 20 \\ \hline
-			Granite gravel & 5 & $1.5\times10^6$--$4.5\times10^{6}$ & Granite gravel & 7 & 5000--$10^4$ \\ \hline
-			Basalt & 6 & 1000 & Silt & 30 & 10 \\ \hline
-			Diabase & 7 & 100 & Shale & 7 & 10 \\ \hline
-			Iron & 1 & $9.70\times10^{-8}$ & Limestone gravel & 8 & 2000--3000 \\ \hline
-			Carbon steel & 1 & $1.43\times10^{-7}$ & Diabase & 8 & 10 \\ \hline 
-			PVC & 8 & $15\times10^{17}$ & Basalt & 8 & 100 \\ \hline
-			Asphalt & 3--5 & $2\times10^{6}$--$30\times10^{6}$ & Asphalt & 3--5 & $10^4$--$6\times10^{6}$ \\ \hline
-			Dry concrete & 5.5 & $10^6$--$10^{9}$ & Wet concrete & 12.5 & 21--100 \\
-			\hline
-		\end{tabular}
-		\vspace{0.05cm}\\
-		\textbf{Source:} ~Own authorship.\\
-	\end{table}
-	
-	The same happens with the figures: titles are placed at the top, sources at the bottom. \textbf{It is mandatory to specify the sources (references)} for all figures and graphs, even if they were compiled by the author - in such cases, a note `Own authorship' is sufficient.
-	\begin{figure}[H]
-		\begin{center}
-		\caption{Just a sample figure.} 
-			\includegraphics[width=.1\columnwidth]{./CapaUNB_Nova.eps}
-				\vspace{0.05cm}\\
-		\textbf{Source:} ~Own authorship.\\
-				\label{fig:sample_figure}
-			\end{center}
-		\end{figure}
+\chapter{Introdução}\label{Cap:Introduction}
+% Apresente o tema geral de vídeos 360 e a crescente demanda por transmissão eficiente:
+% Exemplo: "Com a crescente popularidade de conteúdos imersivos como vídeos 360°, garantir uma transmissão eficiente e de alta qualidade tornou-se um desafio crucial para sistemas de streaming."
+% Explique a importância da segmentação espacial (ladrilhos) e temporal no contexto de vídeos 360:
+% Exemplo: "A abordagem baseada em ladrilhos permite transmitir apenas partes do vídeo que estão no campo de visão do usuário, otimizando o uso da largura de banda."
+% Introduza o uso de MPEG DASH e algoritmos ABR (Adaptação de Taxa de Bits) para lidar com as variações na qualidade da rede.
 
-    Text encoding has been set to UTF-8. This is important to allow displaying accented characters in Portuguese without loss of compatibility with the \textit{babel} English package. Note that UTF-8 encoding is set in line 8 of the main \LaTeX file, as well as hard-coded in line 19 of the \textit{unbthesis.cls} class file. Be careful when messing around with character encoding to prevent conflicts and compiling issues.
-    
-    This is a constant work in progress and new improvements are expected over time. Instructions and responses to FAQs will be added to this section as need. You can contact the main author of this template via email: \href{mailto:amaurigm@lapse.unb.br}{amaurigm@lapse.unb.br}.
+	
+\section{Contextualização}
+
+Com a popularização de dispositivos de realidade virtual e mista, a demanda por conteúdos imersivos também aumenta, e para os distribuidores de conteúdo tornou-se um desafio garantir uma transmissão eficiente e de alta qualidade. Os vídeos esféricos, aka Videos 360º apresentam um dos maiores consumos de largura de banda pois os mecanismos de transmissão tradicionais processam regiões do vídeo que não são vistas pelo usuário. Como o usuário fica posicionado no centro de uma esfera e o vídeo é projetado na casca interna desta esfera, o usuário apenas assistirá a porção de vídeo que seu campo de visão (FOV -Field Of View)permitir. Os óculos de realidade virtual o FOV geralmente possui valores entre 90° e 200° horizontal e entre 90° e 140° vertical 
+\href{https://vr-compare.com/}{https://vr-compare.com/}
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/fov_sizes_oculus}
+	\caption[legenda curta]{Legenda longa permite até quebra. sei lá o que pode fazer}
+	\label{fig:fovsizesoculus}
+\end{figure}
+
+A segmentação espacial da esfera em ladrilhos e a transmissão de apenas os ladrilhos que o usuário vê usando algum protocolo de HTTP Adaptive Streaming (HAS) é uma das soluções mais promissoras. Essa abordagem cede controle ao cliente de selecionar a qualidade do vídeo cuja taxa de bits melhor se acomoda à largura de banda disponível, evitando eventos de rebbufering e travamentos na reprodução.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/projecao_com_tiles_e_viewport}
+	\caption{projeção com tiles e viewport}
+	\label{fig:projecaocomtileseviewport}
+\end{figure}
+
+Porém, no caso dos vídeos esféricos o cliente precisa saber antecipadamente a largura de banda e os ladrilhos que serão vistos nos próximos segundos. Várias técnicas desde regressão linear e aprendizado por reforço já foram propostas, porém, a muitos destes estudos avaliam seus resultados
+
+\section{Problema}
+
+Os estudos comparam seus resultados com a situação ideal ou ingênua. Os estudos inventam situações próprias as vezes impraticáveis ou irreais. Os protocolos reais mais utilizados são do tipo HAS (HTTP adaptive Streaming)
+
+\subsection{Sobre o tempo de decodificação}
+
+De acordo com o artigo do Flare o tempo de decodificação de dispositivos móveis é quase 50\% do atraso total da exibição. Logo, é necessário conhecer sua distribuição para modelar corretamente o limiar do \textit{buffer} de reprodução (que deve conter \textit{chunks} suficiente para que a reprodução não seja interrompida até que cheguem novos \textit{chunks}).
+
+\subsection{Fluxo de trabalho}
+
+\begin{algorithm}
+	\caption{Algoritmo para controle do buffer}\label{alg:buffer_control}
+	\begin{algorithmic}[1]
+		
+	\While {TRUE}
+		\If {buffer < buffer\_limiar}
+			\While {buffer < buffer\_max}
+				\State \textbf{Request} chunks
+			\EndWhile
+		\EndIf
+	\EndWhile
+	\end{algorithmic}
+\end{algorithm}
+
+Limiar deve ser no mínimo o tempo necessário para solicitar, receber, decodificar e exibir um novo \textit{chunk}. Este atraso de reprodução do \textit{chunk} precisa ser menor do que a diferença do tempo que será reproduzido ($T_i$) e o tempo atual ($T_0$) (tempo que falta para o \textit{chunk} ser exibido) ou a reprodução será interrompida por esvaziamento do \textit{buffer}:
+
+\begin{math}
+	T_{exibicao} = 2T_{propagacao} + T_{transmissao} + T_{decodificacao} \leq T_i - T_0
+\end{math}
+
+\subsection{Objetivo}
+% Declare claramente o objetivo do artigo
+
+\begin{itemize}
+	\item Este trabalho propõe uma metodologia objetiva para avaliar o desempenho de algoritmos de adaptação de taxa de bits (ABR) e preditor de viewport (VP) em protocolos HAS (HTTP Adaptive Streaming, ex. DASH, Smooth Streaming, HLS) para transmissão de vídeos 360° segmentados espacialmente em ladrilhos.
+	\item Este trabalho propõe uma metodologia objetiva para avaliar o desempenho de algoritmos de adaptação de taxa de bits (ABR) e preditor de viewport (VP) em protocolos HAS (Adaptive Streaming over HTTP, ex. DASH, Smooth Streaming, HLS) para transmissão de vídeos 360° segmentados espacialmente em ladrilhos.
+	\item Uma vez que os protocolos ASH segmentam temporalmente o vídeo em chunks de mesma duração, construiremos uma base de dados de métricas dos chunks dos ladrilhos, como tempo de decodificação, taxa de bits e métricas de qualidade objetiva como SSIM, MSE, S-MSE e WS-MSE.
+\end{itemize}
+
+\subsection{Contribuições}
+% Liste as principais contribuições do artigo
+
+\begin{itemize}
+	\item Uma base de dados de métricas para vídeos em diferentes qualidades, criada para suportar simulações.
+	\item Uma metodologia unificada para análise de algoritmos ABR com múltiplos elementos sincronizados.
+	\item Um estudo de caso que compara o desempenho de diferentes algoritmos sob várias condições de rede, com métricas como SSIM, MSE e taxa de bits.	
+\end{itemize}
+
+\subsection{Estrutura do artigo}
+%Descreva como o artigo está organizado
+% Sempre use aspas automáticas, pois aspas duplas " dá problema com o pacote babel.
+
+``O restante deste artigo está organizado da seguinte forma: a Seção 2 apresenta os trabalhos relacionados; a Seção 3 detalha a metodologia proposta; a Seção 4 discute os resultados experimentais; e a Seção 5 conclui o artigo e sugere direções para trabalhos futuros.''
