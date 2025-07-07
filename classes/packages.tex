@@ -1,0 +1,65 @@
+% Pacotes de linguagem
+\usepackage[english,brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% Pacotes de matemática, fontes matemáticas, icones matemáticos, etc.
+\usepackage{amssymb}    %  Adiciona símbolos matemáticos extras
+\usepackage{amsfonts}   %  Fornece fontes matemáticas adicionais
+\usepackage{amstext}    %  Permite inserir texto normal dentro de expressões matemáticas  (\text{})
+\usepackage{amsmath}    % Expande os recursos matemáticos do LaTeX com ambientes extras (align, multiline, etc)
+\usepackage{mathtools}  % extensão do amsmath que melhora a tipografia matemática
+\usepackage{calc}       % Permite expressões aritméticas em comandos como \setlength.
+
+%% Formatação de texto e espaçamento
+\usepackage{blindtext}    % Gera texto fictício (lorem ipsum) para testes.
+\usepackage{setspace}     % Controla o espaçamento entre linhas (simples, 1.5, duplo).
+\usepackage{verbatim}     % Permite exibir texto exatamente como digitado, útil para código.
+\usepackage{indentfirst}  % Faz com que o primeiro parágrafo após um título seja indentado.
+\usepackage{textcomp}     % Oferece símbolos adicionais como °, ©, ™, entre outros.
+\usepackage{soul}         % Adiciona efeitos como sublinhado, tachado e espaçamento entre letras.
+\usepackage{xfrac}        % Cria frações em linha com barra inclinada (ex: ½ como `\sfrac{1}{2}`).
+\usepackage{icomma}  % Corrige o espaçamento após vírgulas em modo matemático
+\usepackage{paralist}  % Cria listas compactas (compactitem, compactenum) e listas inline (inparaenum).
+\usepackage{relsize}  % Ajusta tamanho de fonte relativo ao atual (\larger, \smaller).
+\usepackage{enumitem}
+\usepackage{afterpage}  % Executa comandos após a quebra de página (ex: \afterpage{\clearpage}).
+\usepackage{fancyvrb}  % Melhora ambientes verbatim (numeração de linhas, molduras, cores).
+\usepackage[retainorgcmds]{IEEEtrantools} % Permite usar comandos do estilo IEEE (\IEEEPARstart, \IEEEeqnarray) em outras classes.
+
+%% Cores e estilo
+\usepackage{color}     % Permite usar cores no texto e elementos
+\usepackage[bookmarks=true,bookmarksopen=false,colorlinks=true,linktocpage=true,pagebackref	]{hyperref}  % Cria links clicáveis e configurações de navegação em PDF.
+\usepackage{url}  % Formata URLs corretamente, com quebras de linha seguras.
+\usepackage{lscape}  % Gira o conteúdo da página para modo paisagem.
+\usepackage{hhline} % pacote para criar linhas horizontais segmentadas
+\usepackage{layout}  % Exibe graficamente o layout da página atual (margens, espaçamentos, etc).
+\usepackage{fancyhdr}  % Personaliza cabeçalhos e rodapés.
+
+
+%% Tabelas
+\usepackage{stfloats}  % Melhora o posicionamento de figuras e tabelas em documentos com duas colunas.
+\usepackage{longtable}  % Cria tabelas que podem se estender por várias páginas.
+\usepackage{multirow}   % Permite mesclar células verticalmente em tabelas.
+\usepackage{hhline}     % Cria linhas horizontais personalizadas em tabelas.
+\usepackage{array}      % Oferece mais controle sobre colunas em tabelas.
+\usepackage{booktabs}   % Cria tabelas com aparência profissional (sem linhas verticais).
+\usepackage{ctable}  % Gera tabelas e figuras com legenda e notas em um único comando.
+\usepackage{colortbl}  % Adiciona cores em células de tabelas.
+
+
+% Imagens e figuras
+\usepackage{subfigure}  % Cria subfiguras dentro de uma figura maior (embora esteja obsoleto; `subcaption` é recomendado).
+\usepackage{float}      % Permite posicionar figuras e tabelas com mais precisão (ex: `[H]`).
+\usepackage{graphics,graphicx}  % Inserção e manipulação de imagens.
+\usepackage{epstopdf}  % Converte imagens EPS para PDF automaticamente.
+\usepackage{psfrag}  % Substitui texto em arquivos EPS por construções LaTeX.
+\usepackage{wallpaper}  % Insere imagens de fundo (inclusive em modo mosaico).
+
+%% Citações e referências
+\usepackage[alf,abnt-etal-text=it,abnt-etal-list=0,abnt-etal-cite=2,abnt-and-type=&,abnt-year-extra-label=yes]{abntex2cite}  % Formata citações e referências conforme normas da ABNT.
+
+%% Algoritmos
+\usepackage{algorithm}      % Cria ambientes flutuantes para algoritmos.
+\usepackage{algpseudocode}  % Permite escrever pseudocódigo com comandos como `\If`, `\While`, etc.
