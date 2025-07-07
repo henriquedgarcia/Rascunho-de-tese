@@ -1,15 +1,36 @@
 
 \chapter{FUNDAMENTAÇÃO TEÓRICA E TRABALHOS RELACIONADOS}\label{Cap:Foundations}
 
-\section{Transmissão de vídeos 360 com ladrilhos}
+\section{O Vídeo 360°}
 
-O streaming de vídeo 360 envolve várias etapas de processamento de imagens, como mostra a figura XXXX. O processo começa com a captura do vídeo através de arranjos de câmeras tradicionais. As imagens precisam ser processadas, coladas e então projetadas em uma superfície plana onde um codificador de vídeo como H.265 ou AV1 é usado para comprimi-lo. Como o campo visual do ser humano é limitado, o usuário encherga apenas uma fração de toda as esfera. Assim, para que o que é visto tenha uma boa resolução, como Full DH, a projeção deve ter uma resolução muito maior, como 4K ou até mesmo 12K. Porém, como processar partes da esfera que não são assistidas desperdiçam recursos, a projeção é segmentada espacialmente em ladrilhos (tiles) que possam ser decodificados forma independentes.
+O vídeo 360° ou vídeo esférico é chamado assim por se comportar como se estivesse projetado na casca interior de uma esfera onde o usuário espectador está locado no centro e possui liberdade para olhar ao redor, mas não para se mover pelo espaço. O vídeo geralmente é reproduzido em um óculos de realidade virtual (HMD - Head Mounted Display) que atualiza a exibição baseado no movimento da cabeça do espectador, dando a sensação de que o usuário está imerso no vídeo. Como não há movimento de translação no vídeo, geralmente ele é assistido sentado em uma cadeira fixo, como um sofá, por exemplo ou um assento que roda, como uma cadeira de escritório. O vídeo 360° também pode ser reproduzido em navegadores web, como YouTube, onde podemos explorar a esfera do vídeo usando o teclado ou mouse. Além disso, o vídeo 360° pode ser reproduzido em dispositivos moveis celular, onde a exploração da esfera pode ser conectada ao acelerômetro do dispositivo e o usuário mover o celular para visualizar ao redor.
 
-A criação do streaming de vídeo esférico envolve várias etapas envolvendo diversas técnicas de processamento de imagem para
 
-Captura -> stitch --> projeção --> tiling --> codificação -->  Dashing --> Streaming --> decoding --> mount --> Rectilinear Projection (Viewport) --> display
 
-\subsection{Captura}
+\subsection{A captura}
+
+
+
+O HMD
+Este trabalho se concentra no vídeo assistido por usuários de um HMD, porém seus resultados podem ser aplicados a qualquer tipo de visualizador. Por conveniência e para dar maior liberdade ao usuário, os HMD devem fazer uso de baterias, o que aumenta seu peso e desconforto e devem se conectar a uma rede sem fio, como 4G ou Wi-Fi.
+
+
+A criação deste vídeo consiste em quatro etapas que são: captura, costura, projeção e codificação. A saída do codificador pode ser um arquivo para ser reproduzido posteriormente ou transmitido em um streaming ao vivo.
+
+A captura é feita usando duas ou mais lentes do tipo olho de peixe, ou um arranjo com várias câmeras tradicionais. A captura dos quadros nas câmeras precisam ser sincronizadas ou alguma técnica de interpolação pode ser usada no estágio de pós produção. Cada câmera captura uma região da esfera de forma que haja uma significativa sobreposição com as imagens das câmeras vizinhas. Isto significa
+
+
+
+
+O vídeo 360 é capturado usando duas ou mais lentes olho de peixe múltiplas em uma câmera de vídeo VR. Cada lente olho de peixe projeta uma imagem hemisférica (ou quase hemisférica) em um sensor, onde é gravada como um vídeo de origem. Há uma sobreposição significativa nas bordas de cada vídeo de origem e, durante o processo de costura, as seções sobrepostas de cada vídeo são combinadas para produzir um único vídeo esférico 360 em projeção equirretangular.
+
+
+As câmeras estereoscópicas 3D-360 VR geralmente têm seis ou mais lentes e sensores, e a costura 3D-360 requer uma sobreamostragem completa de todos os pontos do mundo, o que significa que tudo o que a câmera vê deve ser capturado por pelo menos duas lentes adjacentes. Costurar vídeo 3D-360 é muito mais complicado do que costurar 2D-360 mono, e as produções 3D-360 devem considerar a inclusão de um especialista em costura para garantir que a saída seja confortável de visualizar. A saída de um stitcher 3D-360 são duas imagens monoscópicas 360 equirretangulares: uma para cada olho.
+
+
+A costura monoscópica 2D-360 produz um único vídeo 360 equirretangular. Durante a reprodução, cada olho vê o mesmo vídeo e não há profundidade 3D percebida na experiência.
+
+
 
 \begin{figure}[tbh]
 	\centering
@@ -76,7 +97,7 @@ Captura -> stitch --> projeção --> tiling --> codificação -->  Dashing --> S
 	\item \url{https://www.fcav.unesp.br/Home/departamentos/engenhariarural/TERESACRISTINATARLEPISSARRA/edital.pdf}
 	\item \url{https://brasilescola.uol.com.br/geografia/projecoes-cartograficas.htm}
 	\item \url{https://www.infoescola.com/cartografia/projecao-cilindrica-equidistante/}
-	\item \url{https://proj.org/en/stable/operations/projections/eqc.html}	
+	\item \url{https://proj.org/en/stable/operations/projections/eqc.html}
 \end{itemize}
 
 Os prints abaixo são desse livro
@@ -109,16 +130,23 @@ Os prints abaixo são desse livro
 \begin{itemize}
 	\item Octahedron
 	\item Truncated Square Pyramid
-	\item Fisheye   
-	\item Hybrid equi-angular cubemap 	
+	\item Fisheye
+	\item Hybrid equi-angular cubemap
 	\item Equi-angular cubemap
-	\item Equatorial cylindrical projection 	
-	\item Segmented Sphere Projection 	
-	\item Icosahedron 
+	\item Equatorial cylindrical projection
+	\item Segmented Sphere Projection
+	\item Icosahedron
 	\item …
-	\item \url{https://jvet.hhi.fraunhofer.de/svn/svn_360Lib/tags/HM-16.9-360Lib-1.0-rc1/}	
+	\item \url{https://jvet.hhi.fraunhofer.de/svn/svn_360Lib/tags/HM-16.9-360Lib-1.0-rc1/}
 \end{itemize}
 
+\section{Transmissão de vídeos 360 com ladrilhos}
+
+O streaming de vídeo 360 envolve várias etapas de processamento de imagens, como mostra a figura XXXX. O processo começa com a captura do vídeo através de arranjos de câmeras tradicionais. As imagens precisam ser processadas, coladas e então projetadas em uma superfície plana onde um codificador de vídeo como H.265 ou AV1 é usado para comprimi-lo. Como o campo visual do ser humano é limitado, o usuário encherga apenas uma fração de toda as esfera. Assim, para que o que é visto tenha uma boa resolução, como Full DH, a projeção deve ter uma resolução muito maior, como 4K ou até mesmo 12K. Porém, como processar partes da esfera que não são assistidas desperdiçam recursos, a projeção é segmentada espacialmente em ladrilhos (tiles) que possam ser decodificados forma independentes.
+
+A criação do streaming de vídeo esférico envolve várias etapas envolvendo diversas técnicas de processamento de imagem para
+
+Captura -> stitch --> projeção --> tiling --> codificação -->  Dashing --> Streaming --> decoding --> mount --> Rectilinear Projection (Viewport) --> display
 \subsection{Tiling}
 \subsection{codificação}
 \subsubsection{O vídeo plano - Camada de codificação de vídeo (VLC)}
@@ -130,7 +158,7 @@ Características da codificação:
 \begin{itemize}
 	\item Spatial
 	\begin{itemize}
-		\item Color Space YUV. Color Subsampling (4:4:4, 4:2:0, ...) 
+		\item Color Space YUV. Color Subsampling (4:4:4, 4:2:0, ...)
 		\item Macroblock: 8x8, 16x16, ...
 		\item Discrete Cosine Transform (DCT)
 		\item Quantization function
@@ -142,7 +170,7 @@ Características da codificação:
 		\item Motion Compensator
 	\end{itemize}
 \end{itemize}
-	
+
 Depois, falar sobre o GOP e a disposição dos quadros dentro do gop. Falar sobre o GOP aberto e o GOP fechado.
 
 Enfatizar a dificuldade de decodificar um quadro específico pois a ordem de decodificação não é a mesma da ordem de reprodução.
