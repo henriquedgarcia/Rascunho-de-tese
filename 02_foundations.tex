@@ -74,10 +74,11 @@ A costura monoscópica 2D-360 produz um único vídeo 360 equirretangular. Duran
 
 
 \subsection{Projeção}
-\href{https://wiki.panotools.org/Cubic_Projection}{https://wiki.panotools.org/Cubic\_Projection}
+\url{https://wiki.panotools.org/Cubic_Projection}
 
 \subsubsection{Projeção Cubica Rectilinear}
-\href{https://wiki.panotools.org/Panorama_Viewers}{https://wiki.panotools.org/Panorama\_Viewers}
+
+\url{https://wiki.panotools.org/Panorama_Viewers}
 
 \begin{figure}[tbh]
 	\centering
@@ -182,8 +183,150 @@ Falar sobre codificação com apenas quadros I e sem o quadro B (Fast Decoding).
 \url{http://iphome.hhi.de/wiegand/assets/pdfs/2012_12_IEEE-HEVC-Overview.pdf}
 
 \subsubsection{Bitstream Structure - Network Abstraction Layer}
-\subsection{Dashing}
+
+\begin{itemize}
+    \item NAL Units (h.264 = 21, H.265 = 41)
+    \begin{itemize}
+        \item Organize Bitstream
+        \item Header = 1 byte
+    \end{itemize}
+    \item VCL and non-VCL NAL Units
+    \item Used in
+    \begin{itemize}
+        \item Packet-oriented transport (IP/RTP)
+        \item Bitstream-oriented transport (H.320 and MPEG-2/H.222.0). Have start code.
+    \end{itemize}
+
+\end{itemize}
+
+mostrar imagem daquele artigo sobre overview of high order abstration layer of hevc (NAL)
+
+
+\subsubsection{ISObmff boxes and the CMAF}
+
+mostrar a hierarquia do ISOBMFF. tem uma imagem de uma árvore no documento do padrão. Tem junto uma lista com os poxes. Fala sobre a fragmentação dos pacotes NAL Unit para sincronização entre mídias e permitir a busca rápida.
+
+\subsubsection{Media container (MP4 Format)}
+
+•	•Extends ISO Base Media File Format (ISOBMFF)
+
+•	•Organize media streams in “tracks”
+
+•	•Carriage of NAL unit
+
+•	•Basic structure is called Box
+
+Colocar aquela imagem que mostra o moov e mdata do container MP4. Ver no documento do site chiaglione.
+
+\url{https://mpeg.chiariglione.org/standards/mpeg-4}
+
+
+
+
+\subsection{Dashing - HAS (HTTP Adaptive Streaming)}
+
+M. Hosseini and V. Swaminathan, “Adaptive 360 VR video streaming: Divide and conquer,” in Proc. IEEE Int. Symp. Multimedia (ISM), San Jose, CA, USA, Dec. 2016, pp. 107–110.
+
+M. Graf, C. Timmerer, and C. Mueller, “Towards bandwidth efficient adaptive streaming of omnidirectional video over HTTP: Design, implementation, and evaluation,” in Proc. 8th ACM Multimedia Syst. Conf. (MMSys), Taipei, Taiwan, Jun. 2017, pp. 261–271.
+
+•A. Zare, A. Aminlou, M. M. Hannuksela, and M. Gabbouj, “HEVC- compliant tile-based streaming of panoramic video for virtual reality applications,” in Proc. IEEE Picture Coding Symp. (PCS), Nuremberg, Germany, Dec. 2016, pp. 601–605.
+
+•R. Skupin, Y. Sanchez, D. Podborski, C. Hellge, and T. Schierl, “HEVC tile based streaming to head mounted displays,” in Proc. 14th IEEE Annu. Consum. Commun. Netw. Conf. (CCNC),Las Vegas, NV, USA, Jan. 2017, pp. 613–615.
+
+•S. Petrangeli, V. Swaminathan, M. Hosseini, and F. De Turck, “An HTTP/2-based adaptive streaming framework for 360◦ virtual reality videos,” in Proc. ACM Multimedia Conf., Mountain View, CA, USA, Oct. 2017, pp. 1–9
+
+•C. Ozcinar, A. De Abreu, and A. Smolic, “Viewport-aware adap- tive 360◦ video streaming using tiles for virtual reality,” in Proc. IEEE Int. Conf. Image Process. (ICIP), Beijing, China, Sep. 2017, pp. 2174–2178.
+
+•P. R. Alface, J.-F. Macq, and N. Verzijp, “Interactive omnidirectional video delivery: A bandwidth-effective approach,” Bell Labs Tech. J., vol. 16, no. 4, pp. 135–148, 2012.
+
+•L. Xie, Z. Xu, Y. Ban, X. Zhang, and Z. Guo, “360ProbDASH: Improving QoE of 360 video streaming using tile-based HTTP adaptive streaming,” in Proc. ACM Multimedia Conf., Mountain View, CA, USA, Oct. 2017, pp. 315–323
+
+•A. T. Nasrabadi, A. Mahzari, J. D. Beshay, and R. Prakash, “Adaptive 360-degree video streaming using scalable video coding,” in Proc. ACM Multimedia Conf., Mountain View, CA, USA, Oct. 2017, pp. 1689–1697.
+
+•Y. Sanchez, R. Skupin, C. Hellge, and T. Schierl, “Random access point period optimization for viewport adaptive tile based streaming of 360◦ video,” in Proc. IEEE Int. Conf. Image Process. (ICIP), Beijing, China, Sep. 2017, pp. 1915–1919.
+
+•M. Xiao, C. Zhou, Y. Liu, and S. Chen, “OpTile: Toward optimal tiling in 360-degree video streaming,” in Proc. ACM Multimedia Conf. Mountain View, CA, USA, Oct. 2017, pp. 708–716.
+
+•Z. Tu et al., “Content adaptive tiling method based on user access preference for streaming panoramic video,” in Proc. IEEE Int. Conf. Consum. Electron. (ICCE), Las Vegas, NV, USA, Jan. 2018, pp. 1–4.
+
+•F. Qian, B. Han, Q. Xiao, e V. Gopalakrishnan, “Flare: Practical Viewport-Adaptive 360-Degree Video Streaming for Mobile Devices”, in Proceedings of the 24th Annual International Conference on Mobile Computing and Networking - MobiCom ’18, 2018, no Ml, p. 99–114.
+
+\subsubsection{DASH-SRD}
+O DASH SRD é um admendum do padrão DASH ISO-XXXXX, que inclui a capacidade de mesclar diversos vídeos em único quadro com transmissão adaptativa independente. Assim, seria possível transmitir vários vídeos e imagens de forma independente e o cliente controlava a qualidade e taxa de bits de acordo com a largura de banda disponível. Caso a largura de banda disponível oscilasse, a qualidade poderia aumentar ou diminuir dinamicamente.
+
+Uma vez que o ser humano não consegue enxergar toda a esfera do vídeo, podemos segmentar a projeção da esfera em ladrilhos, onde cada ladrilho compreenderia um vídeo independente e assim, transmitir apenas os ladrilhos na posição que estão sendo vistos. Apesar desta abordagem reduzir a eficiência do codificador, os ganhos são maiores.
+
+Para isto, o servidor deve segmentar o vídeo em CMP em ladrilhos, então cada ladrilho é codificado com várias qualidades diferentes, o que produz vídeos com diferentes taxas de bits. Em seguida os vídeos são segmentados em chunks de mesma duração e disponibilizados em um servidor HTTP.
+
+Para que cada chunk possa ser decodificado independentemente, um arquivo apenas com o cabeçalho é disponibilizado na inicialização do vídeo. As URLs dos chunks de todos os ladrilhos, suas taxas de bits médias, a posição de cada streaming do quadro e outras informações como codificador, taxa de quadros, e outras anotações, são estruturados em um arquivo XML chamado MPD. Ao iniciar o vídeo, o primeiro arquivo solicitado pelo player é o MPD. Com estas informações o cliente requisita os chunks de cada streaming na qualidade que melhor se adequa a largura de banda disponível.
+
+\begin{itemize}
+       \item Others: Apple HLS, Microsoft Smooth Streaming, Adobe ADS
+       \item •Open-Source
+       \item Codec Agnostic
+       \item Quality == Bit Rate (size * 8 / duration
+       \item Chunks à Constant Duration
+       \item Change quality after full chunk download
+       \item Chunk start on I frame
+       \item Fixed size tiles
+       \item GPAC (\url{https://gpac.wp.imt.fr/})
+       \item https://github.com/gpac/gpac
+       \item MPEG DASH SRD: spatial relationship description.
+       \item \url{https://dl.acm.org/doi/10.1145/2910017.2910606}
+       \item \url{https://github.com/gpac/gpac/wiki/Tiled-Streaming}
+       \item
+       \item
+       \item
+
+
+\end{itemize}
+
+
+•Adaptive 360 VR Video Streaming based on MPEG-DASH SRD. https://arxiv.org/abs/1701.06509
+
+•Tiled panoramic video transmission system based on MPEG-DASH. https://ieeexplore.ieee.org/document/7354646/
+
+•https://github.com/gpac/gpac/wiki/HEVC-Tile-based-adaptation-guide
+
+•https://github.com/gpac/gpac/wiki/MPEG-DASH-SRD-and-HEVC-tiling-for-VR-videos
+
+
+Agora mostrar uma figura do padrão do DASH SRD. procurar aqueles artigos que falam do dash srd e ver na documentação dopadrão
+
+\subsubsection{MPD}
+
+Agora falar sobre o MPD e colocar as confgurações dele.
+
+\subsubsection{ABR}
+
+''Algoritmos baseados em regras e aprendizado de máquina têm sido amplamente utilizados para adaptação de taxa de bits em vídeos 360° [3, 4].``
+
 \subsection{Viewport}
+
+Projeção gnomônica
+
+\url{https://en.wikipedia.org/wiki/Gnomonic_projection}
+
+''The gnomonic projection is used extensively in photography, where it is called rectilinear projection, as it naturally arises from the pinhole camera model where the screen is a plane.[3] Because they are equivalent, the same viewer used for photographic panoramas can be used to render gnomonic maps (view as a 360° interactive panorama).`` - Wikipédia
+
+\subsubsection{The Head Mounted Display and the Body Coordinate System}
+
+•	Accelerometer and Compass
+
+•	Euler Rotation (ZàYàX)
+
+\subsubsection{Predição de viewport e erro de predição}
+
+Optimizing 360 Video Delivery Over Cellular Networks
+\url{https://dl.acm.org/doi/10.1145/2980055.2980056}
+
+•Viewport Prediction for 360◦ Videos: A Clustering Approach
+https://dl.acm.org/doi/10.1145/3386290.3396934
+
+•Revisiting Deep Architectures for Head Motion Prediction in 360° Videos
+https://arxiv.org/abs/1911.11702
+
+
 \subsection{Limitações da Literatura}
 \subsection{Conexão como trabalho proposto}
 \subsection{Avaliação de Desempenho}
