@@ -6,10 +6,10 @@
 % Exemplo: "A abordagem baseada em ladrilhos permite transmitir apenas partes do vídeo que estão no campo de visão do usuário, otimizando o uso da largura de banda."
 % Introduza o uso de MPEG DASH e algoritmos ABR (Adaptação de Taxa de Bits) para lidar com as variações na qualidade da rede.
 
-	
+
 \section{Contextualização}
 
-Com a popularização de dispositivos de realidade virtual e mista, a demanda por conteúdos imersivos também aumenta, e para os distribuidores de conteúdo tornou-se um desafio garantir uma transmissão eficiente e de alta qualidade. Os vídeos esféricos, aka Videos 360º apresentam um dos maiores consumos de largura de banda pois os mecanismos de transmissão tradicionais processam regiões do vídeo que não são vistas pelo usuário. Como o usuário fica posicionado no centro de uma esfera e o vídeo é projetado na casca interna desta esfera, o usuário apenas assistirá a porção de vídeo que seu campo de visão (FOV -Field Of View)permitir. Os óculos de realidade virtual o FOV geralmente possui valores entre 90° e 200° horizontal e entre 90° e 140° vertical 
+Com a popularização de dispositivos de realidade virtual e mista, a demanda por conteúdos imersivos também aumenta, e para os distribuidores de conteúdo tornou-se um desafio garantir uma transmissão eficiente e de alta qualidade. Os vídeos esféricos, aka Videos 360º apresentam um dos maiores consumos de largura de banda pois os mecanismos de transmissão tradicionais processam regiões do vídeo que não são vistas pelo usuário. Como o usuário fica posicionado no centro de uma esfera e o vídeo é projetado na casca interna desta esfera, o usuário apenas assistirá a porção de vídeo que seu campo de visão (FOV -Field Of View)permitir. Os óculos de realidade virtual o FOV geralmente possui valores entre 90° e 200° horizontal e entre 90° e 140° vertical
 \href{https://vr-compare.com/}{https://vr-compare.com/}
 
 \begin{figure}[tbh]
@@ -43,7 +43,7 @@ De acordo com o artigo do Flare o tempo de decodificação de dispositivos móve
 \begin{algorithm}
 	\caption{Algoritmo para controle do buffer}\label{alg:buffer_control}
 	\begin{algorithmic}[1]
-		
+
 	\While {TRUE}
 		\If {buffer < buffer\_limiar}
 			\While {buffer < buffer\_max}
@@ -75,7 +75,7 @@ Limiar deve ser no mínimo o tempo necessário para solicitar, receber, decodifi
 \begin{itemize}
 	\item Uma base de dados de métricas para vídeos em diferentes qualidades, criada para suportar simulações.
 	\item Uma metodologia unificada para análise de algoritmos ABR com múltiplos elementos sincronizados.
-	\item Um estudo de caso que compara o desempenho de diferentes algoritmos sob várias condições de rede, com métricas como SSIM, MSE e taxa de bits.	
+	\item Um estudo de caso que compara o desempenho de diferentes algoritmos sob várias condições de rede, com métricas como SSIM, MSE e taxa de bits.
 \end{itemize}
 
 \subsection{Estrutura do artigo}
