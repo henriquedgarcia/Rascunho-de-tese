@@ -143,13 +143,17 @@ Os prints abaixo são desse livro
 
 \section{Transmissão de vídeos 360 com ladrilhos}
 
-O streaming de vídeo 360 envolve várias etapas de processamento de imagens, como mostra a figura XXXX. O processo começa com a captura do vídeo através de arranjos de câmeras tradicionais. As imagens precisam ser processadas, coladas e então projetadas em uma superfície plana onde um codificador de vídeo como H.265 ou AV1 é usado para comprimi-lo. Como o campo visual do ser humano é limitado, o usuário encherga apenas uma fração de toda as esfera. Assim, para que o que é visto tenha uma boa resolução, como Full DH, a projeção deve ter uma resolução muito maior, como 4K ou até mesmo 12K. Porém, como processar partes da esfera que não são assistidas desperdiçam recursos, a projeção é segmentada espacialmente em ladrilhos (tiles) que possam ser decodificados forma independentes.
+O streaming de vídeo 360 envolve várias etapas de processamento de imagens, como mostra a figura XXXX. O processo começa com a captura do vídeo através de arranjos de câmeras tradicionais. As imagens precisam ser processadas, coladas e então projetadas em uma superfície plana onde um codificador de vídeo como H.265 ou AV1 é usado para comprimi-lo. Como o campo visual do ser humano é limitado, o usuário enxerga apenas uma fração de toda as esfera. Assim, para que o que é visto tenha uma boa resolução, como FullHD, a projeção deve ter uma resolução muito maior, como 4K ou até mesmo 12K. Porém, como processar partes da esfera que não são assistidas desperdiçam recursos, a projeção é segmentada espacialmente em ladrilhos (tiles) que possam ser decodificados forma independentes.
 
 A criação do streaming de vídeo esférico envolve várias etapas envolvendo diversas técnicas de processamento de imagem para
 
 Captura -> stitch --> projeção --> tiling --> codificação -->  Dashing --> Streaming --> decoding --> mount --> Rectilinear Projection (Viewport) --> display
+
 \subsection{Tiling}
+aqui falar sobre os autores que propoe tiles de tamanho diferentes e tiles pré recortados
+
 \subsection{codificação}
+
 \subsubsection{O vídeo plano - Camada de codificação de vídeo (VLC)}
 
 Colocar imagem da VLC mostrando a ordem do processamento intrapreditivo (quadros I) e interpreditivo (Quadros P e B).
@@ -222,7 +226,6 @@ Colocar aquela imagem que mostra o moov e mdata do container MP4. Ver no documen
 
 
 
-
 \subsection{Dashing - HAS (HTTP Adaptive Streaming)}
 
 M. Hosseini and V. Swaminathan, “Adaptive 360 VR video streaming: Divide and conquer,” in Proc. IEEE Int. Symp. Multimedia (ISM), San Jose, CA, USA, Dec. 2016, pp. 107–110.
@@ -282,13 +285,13 @@ Para que cada chunk possa ser decodificado independentemente, um arquivo apenas 
 \end{itemize}
 
 
-•Adaptive 360 VR Video Streaming based on MPEG-DASH SRD. https://arxiv.org/abs/1701.06509
+•Adaptive 360 VR Video Streaming based on MPEG-DASH SRD. \url{https://arxiv.org/abs/1701.06509}
 
-•Tiled panoramic video transmission system based on MPEG-DASH. https://ieeexplore.ieee.org/document/7354646/
+•Tiled panoramic video transmission system based on MPEG-DASH. \url{https://ieeexplore.ieee.org/document/7354646/}
 
-•https://github.com/gpac/gpac/wiki/HEVC-Tile-based-adaptation-guide
+•\url{https://github.com/gpac/gpac/wiki/HEVC-Tile-based-adaptation-guide}
 
-•https://github.com/gpac/gpac/wiki/MPEG-DASH-SRD-and-HEVC-tiling-for-VR-videos
+•\url{https://github.com/gpac/gpac/wiki/MPEG-DASH-SRD-and-HEVC-tiling-for-VR-videos}
 
 
 Agora mostrar uma figura do padrão do DASH SRD. procurar aqueles artigos que falam do dash srd e ver na documentação dopadrão
@@ -321,21 +324,156 @@ Optimizing 360 Video Delivery Over Cellular Networks
 \url{https://dl.acm.org/doi/10.1145/2980055.2980056}
 
 •Viewport Prediction for 360◦ Videos: A Clustering Approach
-https://dl.acm.org/doi/10.1145/3386290.3396934
+\url{https://dl.acm.org/doi/10.1145/3386290.3396934}
 
 •Revisiting Deep Architectures for Head Motion Prediction in 360° Videos
-https://arxiv.org/abs/1911.11702
+\url{https://arxiv.org/abs/1911.11702}
+
+\subsubsection{Métodos de seleção de ladrilhos}
+
+An Evaluation of Tile Selection Methods for Viewport-Adaptive Streaming of 360-Degree Video. \url{https://dl.acm.org/doi/10.1145/3373359}
+
+\subsubsection{About Quality}
+
+Tem aquele estudo do MPEG que fala sobre qualidade e depois um outro estudo falando que o S-PSNR não é muito bom.
+
+•PSNR
+
+•S-PSNR
+
+•WS-PSNR
+
+•S-SSIM
+
+IV-PSNR
+
+•A Study on Quality Metrics for 360 Video Communications. 2018 IEICE TRANSACTIONS on Information and Systems.
+
+•Huyen T. T. Tran. Postdoctoral Researcher, University of Aizu. \url{https://github.com/TranHuyen1191}
+
+\url{https://scholar.google.com/citations?hl=en&user=EmQjFBcAAAAJ&view_op=list_works&sortby=pubdate}
+
+•An Evaluation of Tile Selection Methods for Viewport-Adaptive Streaming of 360-Degree Video. 2020 ACM Transactions on Multimedia Computing, Communications, and Applications. 
+
+•An Optimal Tile-Based Approach for Viewport-Adaptive 360-Degree Video Streaming.  IEEE Journal on Emerging and Selected Topics in Circuits and Systems ( Volume: 9, Issue: 1, March 2019)
+
+•A New Adaptation Approach for Viewport-adaptive 360-degree Video Streaming. 2017 IEEE International Symposium on Multimedia (ISM).
+
+•A Weighted Viewport Quality Metric for Omnidirectional Images. 2020 IEICE TRANSACTIONS on Information and Systems   Vol.E103-D   No.1   pp.67-70
+
+•Non-reference Quality Assessment Model using Deep learning for Omnidirectional Images.  2019 IEEE 10th International Conference on Awareness Science and Technology (iCAST)
+
+•Towards an Overall QoE Model for 360-Degree Video. 2020 IEEE Eighth International Conference on Communications and Electronics (ICCE)
+
+•A Subjective Study on User Perception Aspects in Virtual Reality. Applied Sciences (MDPI). 2019; 9(16):3384.
+
+•A Cumulative Quality Model for HTTP Adaptive Streaming. 2018 Tenth International Conference on Quality of Multimedia Experience (QoMEX)
+
+•Impact of delays on 360-degree video communications. 2017 TRON Symposium (TRONSHOW).
+
 
 
 \subsection{Limitações da Literatura}
+
+Resuma as limitações dos estudos existentes:
+
+''A ausência de um framework unificado para avaliação dificulta a comparação de algoritmos ABR e a validação de propostas em cenários realistas.``
+
+
 \subsection{Conexão como trabalho proposto}
+
+Explique como seu trabalho resolve essas limitações:
+
+''Este artigo aborda essas lacunas ao propor uma metodologia unificada para avaliação de algoritmos ABR, considerando múltiplos elementos sincronizados e métricas consistentes.``
+
+
 \subsection{Avaliação de Desempenho}
+
+Discuta as metodologias existentes para avaliação:
+
+''A avaliação de algoritmos ABR para vídeos 360° geralmente utiliza métricas como PSNR, SSIM e MSE, mas as abordagens variam amplamente entre os estudos [5, 6].``
+
+Destaque a lacuna de uma metodologia padronizada para múltiplos elementos:
+
+''Embora algumas propostas considerem a segmentação espacial, poucas abordam o impacto de múltiplos elementos sincronizados com adaptação independente de taxa de bits.``
 
 
 \section{360EAVP}
+
+O 360EAVP, diferentemente dos outros tocadores, constrói um cubo virtual em vez de uma esfera. Em cada face do cubo é exibida os ladrilhos de uma face da projeção CUBEMAP de forma que o usuário não perceba a diferença. Desta forma o player obriga que as faces da projeção cubemap sejam transmitidas separadamente e cada face poderá ser segmentada em qualquer formato de ladrilhos. O padrão de ladrilhamento 3x2 cada face do cubo possui apenas um ladrilho. No padrão 6x4 cada face é segmentada no padrão 2x2, no padrão 9x6 cada face é segmentada no formato 3x3 e no padrão 12x8 cada face é segmentada no padrão 4x4.
+
+\begin{tabular}{|c|c|}
+	\hline
+	Segmentação
+	da projeção
+	& Segmentação
+	da face
+	\\
+	\hline
+	3x2 & 1x1 \\
+	\hline
+	6x4 & 2x2 \\
+	\hline
+	9x6 & 3x3 \\
+	\hline
+	12x8 & 4x4 \\
+	\hline
+\end{tabular}
+
+Para cada ladrilho é instanciado um player independente que recebe a URL do MPD deste ladrilho. Cada MPD contem as informações sobre taxa de bits de cada representação de qualidade do vídeo e informações de como decodificar cada chunk.
+
+O 360EAVP inclui os seguintes módulos:
+
+\begin{itemize}
+	\item Módulo de preparação;
+	\item Módulo de edição dinâmica;
+	\item Módulo de identificação de faces visíveis;
+	\item Módulo de previsão de viewport;
+	\item Módulo ABR consciente da edição;
+	\item Módulo de rastreamento de dados de reprodução de vídeo
+\end{itemize}
+
+colocar uma imagem do trabalho do gabriel. Figura 4.1
+
 \subsection{Preparação}
+
+colocar a figura 4.2
+
+\begin{itemize}
+	\item 
+	\item Solicitar o JSON de vídeo do servidor, permitindo que o aplicativo saiba onde solicitar os vídeos para cada face e preencher as variáveis de escopo correspondentes; openJSON(). 
+	\item Renderizar o ambiente 3D para criar os objetos para cada face nos quais o vídeo será reproduzido; aframe_init()
+	\item Carregar os vídeos em cada face, iniciando a reprodução quando o buffer de cada face estiver completamente carregado. initial()
+\end{itemize}
+
+MPD de um ladrilho
+
+colocar um print do MPD
+
+Cada player também é configurado com um algoritmo ABR chamado pelo DASH.js de CustomRule do tipo 'qualitySwitchRules'. Este algoritmo é um objeto que é passado por fallback para um agendador do controlador ABR que verifica se é necessário mudar a qualidade e periodicamente. Assim, o controlador ABR chama a função getMaxIndex sempre que o buffer estiver abaixo de um certo nível e fica chamando ela até o buffer atingir o valor máximo. Esta função retorna qual a qualidade/representação (index) que ele deve baixar. Se o buffer estiver sempre cheio ele vai chamar essa função uma vez por gop.
+
+O player usa um arquivo Json para descrição espacial em vez de usar o DASH SRD. Este json possui as configurações necessários para construir o ambiente virtual e as URLs de cada ladrilho.
+
+
+
+...
+
+daqui pra baixo o documento do word detalha o software do gabriel
+
 \subsection{Identificador de face}
+
+
 \subsection{Preditor de Viewport}
+
+Devido a natureza do codificador, a ordem de decodificação dos quadros não é a mesma ordem de reprodução. Assim um chunk necessita ser completamente decodificado para que um quadro arbitrário possa ser acessado e a mudança de qualidade só poderá ocorrer após o término do chunk anterior.
+
+Além disso, como o usuário está em movimento, é necessário prever quais tiles serão visualizados durante toda a reprodução do chunk. Como a projeção deforma a esfera, o número de ladrilhos requisitados varia dependendo de onde a pessoa está olhando.
+
+
 \subsection{Sobre a estrutura do programa}
 
 \section{Modelagem de QoE}
+
+Tem uma árvore que mostra os elementos de qualidade de algum artigo sobre qoe.
+
+
